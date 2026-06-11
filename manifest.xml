@@ -4,21 +4,18 @@
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
   xsi:type="MailApp">
 
-  <!-- REPLACE this GUID with a new one: https://guidgenerator.com -->
   <Id>c7f3a921-4d8b-4e6f-b123-9a0e5d7c2f81</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Bishop Fraser</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Client Code Reminder"/>
   <Description DefaultValue="Reminds users to add a client code prefix before sending email."/>
-
   <IconUrl DefaultValue="https://placehold.co/64x64.png"/>
   <HighResolutionIconUrl DefaultValue="https://placehold.co/128x128.png"/>
-  <SupportUrl DefaultValue="https://bishopfraser.co.za"/>
+  <SupportUrl DefaultValue="https://davidebishop.github.io/outlook-addin/"/>
 
   <AppDomains>
-    <!-- REPLACE davidebishop.github.io/outlook-addin with your hosting domain -->
-    <AppDomain>https://davidebishop.github.io/outlook-addin</AppDomain>
+    <AppDomain>https://davidebishop.github.io</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -34,8 +31,7 @@
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
-        <!-- REPLACE davidebishop.github.io/outlook-addin -->
-        <SourceLocation DefaultValue="https://davidebishop.github.io/outlook-addin/client-code-addin/commands.html"/>
+        <SourceLocation DefaultValue="https://davidebishop.github.io/outlook-addin/commands.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -57,19 +53,13 @@
     <Hosts>
       <Host xsi:type="MailHost">
         <DesktopFormFactor>
-
-          <!-- REPLACE davidebishop.github.io/outlook-addin -->
           <FunctionFile resid="Commands.Url"/>
-
-          <!-- ItemSend event: reminds user to add a client code -->
           <ExtensionPoint xsi:type="Events">
             <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="onItemSend"/>
           </ExtensionPoint>
-
         </DesktopFormFactor>
       </Host>
     </Hosts>
-
     <Resources>
       <bt:Images>
         <bt:Image id="Icon.16x16" DefaultValue="https://placehold.co/16x16.png"/>
@@ -77,8 +67,7 @@
         <bt:Image id="Icon.80x80" DefaultValue="https://placehold.co/80x80.png"/>
       </bt:Images>
       <bt:Urls>
-        <!-- REPLACE davidebishop.github.io/outlook-addin -->
-        <bt:Url id="Commands.Url" DefaultValue="https://davidebishop.github.io/outlook-addin/client-code-addin/commands.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://davidebishop.github.io/outlook-addin/commands.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Client Code"/>
@@ -87,6 +76,5 @@
         <bt:String id="GroupLabel.Tooltip" DefaultValue="Client Code Reminder"/>
       </bt:LongStrings>
     </Resources>
-
   </VersionOverrides>
 </OfficeApp>
